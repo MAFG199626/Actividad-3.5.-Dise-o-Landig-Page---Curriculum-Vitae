@@ -9,7 +9,7 @@ html{
 
 /* SECCION INICIO */
 .inicio{
-    background: linear-gradient(rgb(175 37 37 / 30%), rgba(0,0,0,.3)),
+    background-image: linear-gradient(rgb(175 37 37 / 30%), rgba(0,0,0,.3)),
     url(/img/fondo.jpg);
     background-size: cover;
     background-position: center center;
@@ -174,6 +174,7 @@ html{
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
+
     color: #fff;
 }
 
