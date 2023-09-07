@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <title>CV Miguel Flores</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <!-- SECCION INICIO -->
+     <section class="inicio" id="inicio">
+        <div class="contenido-seccion">
+            <header>
+                <div class="nav-bar" onclick="mostrarOcultarMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <nav id="nav" class="nav">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#sobremi">Sobre mí</a>
+                    <a href="#habilidades">Habilidades</a>
+                    <a href="#proyectos">Proyectos</a>
+                    <a href="#resumen">Resumen</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+            </header>
+            <div class="info">
+                <h1>Miguel Angel Flores Guzmán</h1>
+                <br>
+                <h2>DEVELOPER JUNIOR</h2>
+                <div class="redes">
+                    <a href="https://www.facebook.com/miguelangel.floresguzman.10"><i class="fa-brands fa-facebook-f"></i></a>
+                   
+                </div>
+            </div>
+            <div class="foto">
+                <img src="/img/foto.png" alt="Y la imagen?">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION SOBRE MI -->
+    <section class="sobremi" id="sobremi">
+        <div class="contenido-seccion">
+            <h2 class="titulo-seccion">Sobre Mi</h2>
+            <h3>Detalles personales</h3>
+            <p class="especial">Me dedico al backend principalmente.</p>
+            <p>Soy un estudiante de ingeniería en sistemas. Me considero capaz de buscar soluciones en el menor tiempo
+                posible. Mi enfoque principal se encuentra en el desarrollo backend.</p>
+        </div>
+    </section>
+
+    <!-- SECCION HABILIDADES -->
+    <section class="habilidades" id="habilidades">
+        <div class="contenido-seccion">
+            <h2 class="titulo-seccion">Habilidades</h2>
+            <div id="habilidades-container-outer">
+                <div id="habilidades-container">
+                    <canvas id="habilidades-chart"></canvas>
+                    <script>
+                        // Datos de habilidades y porcentajes
+                        const habilidadesData = {
+                            labels: ["html/css", "JavaScript", "c#", "Sql"],
+                            datasets: [
+                                {
+                                    data: [50, 50, 60, 70],
+                                    backgroundColor: ["#4CAF50", "#FF5733", "#FFC300", "#3399FF", "#FF33E9", "#33FF9E"],
+                                },
+                            ],
+                        };
+                     
+                        // Configuración del gráfico
+                        const habilidadesConfig = {
+                            type: "doughnut", // Tipo de gráfico de progreso circular
+                            data: habilidadesData,
+                            options: {
+                                plugins: {
+                                    datalabels: {
+                                        formatter: (value) => `${value}%`, // Formatea las etiquetas con el símbolo de porcentaje
+                                        color: "#fff", // Color del texto de etiquetas
+                                        font: {
+                                            weight: "bold", // Estilo de fuente en negrita
+                                            size: 16, // Tamaño de fuente
+                                        },
+                                    },
+                                },
+                                responsive: true,
+                            },
+                        };
+                     
+                        // Crear y mostrar el gráfico
+                        const ctx = document.getElementById("habilidades-chart").getContext("2d");
+                        const myChart = new Chart(ctx, habilidadesConfig);
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION PROYECTOS -->
+    <section class="proyectos" id="proyectos">
+
+        <h2 class="titulo-seccion"><center>Mis Proyectos</center></h2>
+        <div class="contenido-proyectos">
+
+            <div class="card">
+                <div class="face front ">
+                        <img src="/img/imagen1.jpg" alt="Proyecto 1">
+                        <h3>Ejercicio Web</h3>
+                </div>
+                <div class="face back">
+                    <p class="justificado">Una pagina web basica</p>
+<div>
+    <a href="https://github.com/MAFG199626/Web-Tarea-1" class="enlace-estilizado">Ver en GitHub</a>
+
+</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="face front ">
+                        <img src="img/imagen2.jpg" alt="Proyecto 1">
+                        <h3>Trabajo movil</h3>
+                </div>
+                <div class="face back">
+                    <p class="justificado">Proyecto movil.</p>
+                    <div>
+                        <a href="https://github.com/MAFG199626/AppEnergiaElectrica-JoelZuniga-MiguelFlores" class="enlace-estilizado">Ver en GitHub</a>
+                    
+                    </div>
+                </div>
+            </div>          
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- SECCION RESUMEN -->
+    <section class="resumen" id="resumen">
+        <div class="contenido-seccion">
+            <h2 class="titulo-seccion">Resumen</h2>
+            <h3>Mi preparación y experiencia</h3>
+            <div class="info">
+                <div class="col">
+                    <span class="titulo">Educación</span>
+                    <table>
+                        <tr>
+                            <td class="datos">
+                                <h3>2020-2024</h3>
+                            </td>
+                            <td rowspan="2" class="descripcion">
+                                Conocimientos varios y basicos en base de datos, programación movil, web, de escritorio, entre otros.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>Ing. en Sistemas</h4>
+                                <p>Unan managua</p>
+                            </td>
+                        </tr>
+                    </table>
+                   
+                  
+                </div>
+                <div class="col">
+                    <span class="titulo">Experiencia Laboral</span>
+                    <table>
+                        <tr>
+                            <td class="datos">
+                                <h3>3 Meses</h3>
+                            </td>
+                            <td rowspan="2" class="descripcion">
+                                Desarrollador en el area de TI, en la Bolsa Agropecuaria de Nicaragua(BAGSA)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>Psicoaprendes</h4>
+                                <p>Desarrollador de escritorio</p>
+                               
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td class="datos">
+                                <h3>3 meses</h3>
+                            </td>
+                            <td rowspan="2" class="descripcion">
+                                Abridor de puertas profesional (Instructor en la unan)
+                                <p>Mejor record logrado: Abrir 3 puertas en 5.6 sg</p>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>unan managua</h4>
+                                <p>tecnico en soporte computacional</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION CONTACTO -->
+    <section class="contacto" id="contacto">
+        <div class="contenido-seccion">
+            <h2 class="titulo-seccion">Contacto</h2>    
+            <h3>Ponte en contacto y Hagamos una pagina de achelin!</h3>
+
+            <div class="fila">
+                <div class="col">
+                    <h2>
+                        <i class="fa-solid fa-phone"></i> Teléfono
+                    </h2>
+                    <span class="info-contacto">+505 81612475</span>
+                </div>
+                <div class="col">
+                    <h2>
+                        <i class="fa-solid fa-envelope"></i> Correo
+                    </h2>
+                    <span class="info-contacto">miguelangel.floresguzman96@gmail.com</span>
+                </div>
+                <div class="col">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+  
+
+
+</body>
+</html>
